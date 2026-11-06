@@ -13,8 +13,7 @@ body { font-family: -apple-system, 'SF Pro Display', 'Segoe UI', Arial, sans-ser
        color: var(--ink); background: #EEF2F6; min-height: 100vh; }
 /* фото-фон как есть */
 body::before { content: ''; position: fixed; inset: 0; z-index: -2;
-               background: #31435A url(bg.webp?v=1793968475) center/contain no-repeat; }
-@media (max-width: 640px) { body::before { background-size: cover; } }
+               background: #31435A url(bg.webp?v=1793968475) center/cover no-repeat; }
 .wrap { max-width: 1080px; margin: 0 auto; padding: 26px 28px 30px; }
 /* стеклянные карточки */
 .glass { background: rgba(255,255,255,.32); backdrop-filter: blur(9px) saturate(1.2);
@@ -131,7 +130,7 @@ p.empty { font-size: 14.5px; margin: 6px 4px; }
 <div class="wrap">
 <header class="hero glass">
   <h1>⌚️ Спортивные показатели атлета</h1>
-  <div class="sub">Сгенерирован 06.11.2026 15:41 ·
+  <div class="sub">Сгенерирован 06.11.2026 15:43 ·
   Синхронизация данных: <b>2026-11-06T13:24:16</b></div>
 </header>
 <nav class='tabs glass'><button class='tabbtn active' onclick="showTab('overview', this)">📊 Общая</button><button class='tabbtn' onclick="showTab('run', this)">🏃 Бег</button><button class='tabbtn' onclick="showTab('strength', this)">💪 Силовая</button><button class='tabbtn' onclick="showTab('swim', this)">🏊 Плавание</button><button class='tabbtn' onclick="showTab('ski', this)">🎿 Лыжи</button></nav>
