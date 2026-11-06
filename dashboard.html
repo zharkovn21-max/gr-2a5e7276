@@ -5,7 +5,7 @@
 <link rel="preload" as="image" href="bg.webp?v=1793968475" fetchpriority="high">
 <script src="https://cdn.plot.ly/plotly-2.35.2.min.js" charset="utf-8"></script>
 <style>
-:root { --ink:#16222E; --muted:#5D6D79; --blue:#2E86AB; --orange:#E67E22;
+:root { --ink:#16222E; --muted:#39454F; --blue:#2E86AB; --orange:#E67E22;
         --green:#27AE60; --red:#E74C3C; }
 * { box-sizing: border-box; }
 html, body { margin: 0; }
@@ -16,8 +16,8 @@ body::before { content: ''; position: fixed; inset: 0; z-index: -2;
                background: #31435A url(bg.webp?v=1793968475) center/cover no-repeat; }
 .wrap { max-width: 1080px; margin: 0 auto; padding: 26px 28px 30px; }
 /* стеклянные карточки */
-.glass { background: rgba(255,255,255,.16); backdrop-filter: blur(6px) saturate(1.15);
-         -webkit-backdrop-filter: blur(6px) saturate(1.15);
+.glass { background: rgba(255,255,255,.08); backdrop-filter: blur(4px) saturate(1.1);
+         -webkit-backdrop-filter: blur(4px) saturate(1.1);
          border: 1px solid rgba(255,255,255,.5); border-radius: 18px;
          box-shadow: 0 10px 32px rgba(16,42,67,.10); }
 header.hero { padding: 22px 26px; margin-bottom: 18px; }
@@ -28,7 +28,7 @@ header.hero .sub b { color: var(--ink); }
 nav.tabs { position: sticky; top: 10px; z-index: 50; display: flex; gap: 6px;
            padding: 8px 10px; margin-bottom: 18px; border-radius: 16px;
            overflow-x: auto; -webkit-overflow-scrolling: touch; }
-.tabbtn { border: 1px solid rgba(255,255,255,.4); background: rgba(255,255,255,.15);
+.tabbtn { border: 1px solid rgba(255,255,255,.4); background: rgba(255,255,255,.08);
           color: var(--ink); font-weight: 700; font-size: 14px; padding: 9px 16px;
           border-radius: 12px; cursor: pointer; white-space: nowrap; transition: all .18s; }
 .tabbtn:hover { background: rgba(255,255,255,.5); }
@@ -42,7 +42,7 @@ section.kpis { padding: 18px 20px 14px; margin-bottom: 18px; }
 .rowlabel { font-size: 11.5px; font-weight: 800; letter-spacing: .07em;
             text-transform: uppercase; color: var(--muted); margin: 2px 0 10px; }
 .krow { display: grid; grid-template-columns: repeat(auto-fit, minmax(155px, 1fr)); gap: 12px; }
-.kpi { background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.45);
+.kpi { background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.4);
        border-radius: 14px; padding: 10px 12px 8px; display: flex; flex-direction: column;
        min-width: 0; box-shadow: 0 2px 10px rgba(16,42,67,.05); }
 .kpi .k-top { display: flex; align-items: center; gap: 6px; min-width: 0; }
@@ -72,11 +72,11 @@ details.sec > summary .chev { margin-left: 8px; color: var(--muted); font-size: 
                               transition: transform .25s ease; }
 details.sec[open] > summary .chev { transform: rotate(180deg); }
 details.sec > .sec-body { padding: 0 20px 18px; }
-.badge { font-size: 11.5px; color: #55636F; font-weight: 600;
+.badge { font-size: 11.5px; color: #39454F; font-weight: 600;
          background: rgba(127,140,141,.13); padding: 3px 10px; border-radius: 999px; }
 /* переключатель срезов */
 .swbtns { display: flex; gap: 5px; margin-left: 6px; }
-.swbtn { border: 1px solid rgba(46,134,171,.35); background: rgba(255,255,255,.20);
+.swbtn { border: 1px solid rgba(46,134,171,.35); background: rgba(255,255,255,.12);
          color: #34607A; font-weight: 700; font-size: 12px; padding: 5px 13px;
          border-radius: 999px; cursor: pointer; transition: all .15s; }
 .swbtn:hover { background: rgba(255,255,255,.6); }
@@ -84,7 +84,7 @@ details.sec > .sec-body { padding: 0 20px 18px; }
 .lgd-group { display: flex; gap: 12px; align-items: center; margin-left: auto;
              min-width: 0; overflow: hidden; }
 .lgd { display: inline-flex; align-items: center; gap: 5px; font-size: 11.5px;
-       font-weight: 600; color: #46586A; white-space: nowrap; }
+       font-weight: 600; color: #39454F; white-space: nowrap; }
 .lgd i { width: 10px; height: 10px; border-radius: 3px; display: inline-block; }
 /* разбор коуча и советы */
 section.review .rv-h { font-weight: 800; font-size: 14.5px; margin: 16px 0 4px; color: #1B4F72; }
@@ -95,13 +95,13 @@ section.review .rv-h { font-weight: 800; font-size: 14.5px; margin: 16px 0 4px; 
 /* список тренировок */
 .tlist { display: flex; flex-direction: column; gap: 8px; }
 .trow { display: grid; grid-template-columns: 36px 1fr auto; gap: 10px; align-items: center;
-        background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.45);
+        background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.4);
         border-radius: 12px; padding: 9px 13px; }
 .trow.big { padding: 13px 16px; margin-bottom: 6px; }
 .trow .t-ico { font-size: 20px; text-align: center; }
 .trow .t-name { font-weight: 700; font-size: 14px; }
 .trow .t-sub { font-size: 12px; color: var(--muted); margin-top: 2px; }
-.trow .t-metrics { text-align: right; font-size: 12.5px; color: #46586A; white-space: nowrap; }
+.trow .t-metrics { text-align: right; font-size: 12.5px; color: #39454F; white-space: nowrap; }
 .tot { font-size: 13px; color: var(--muted); margin: 0 0 12px 2px; }
 .tot b { color: var(--ink); }
 p.empty { font-size: 14.5px; margin: 6px 4px; }
@@ -130,7 +130,7 @@ p.empty { font-size: 14.5px; margin: 6px 4px; }
 <div class="wrap">
 <header class="hero glass">
   <h1>⌚️ Спортивные показатели атлета</h1>
-  <div class="sub">Сгенерирован 06.11.2026 15:47 ·
+  <div class="sub">Сгенерирован 06.11.2026 15:49 ·
   Синхронизация данных: <b>2026-11-06T13:24:16</b></div>
 </header>
 <nav class='tabs glass'><button class='tabbtn active' onclick="showTab('overview', this)">📊 Общая</button><button class='tabbtn' onclick="showTab('run', this)">🏃 Бег</button><button class='tabbtn' onclick="showTab('strength', this)">💪 Силовая</button><button class='tabbtn' onclick="showTab('swim', this)">🏊 Плавание</button><button class='tabbtn' onclick="showTab('ski', this)">🎿 Лыжи</button></nav>
