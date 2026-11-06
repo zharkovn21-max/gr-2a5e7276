@@ -130,7 +130,7 @@ p.empty { font-size: 14.5px; margin: 6px 4px; }
 <div class="wrap">
 <header class="hero glass">
   <h1>⌚️ Спортивные показатели атлета</h1>
-  <div class="sub">Сгенерирован 06.11.2026 15:52 ·
+  <div class="sub">Сгенерирован 06.11.2026 15:59 ·
   Синхронизация данных: <b>2026-11-06T13:24:16</b></div>
 </header>
 <nav class='tabs glass'><button class='tabbtn active' onclick="showTab('overview', this)">📊 Общая</button><button class='tabbtn' onclick="showTab('run', this)">🏃 Бег</button><button class='tabbtn' onclick="showTab('strength', this)">💪 Силовая</button><button class='tabbtn' onclick="showTab('swim', this)">🏊 Плавание</button><button class='tabbtn' onclick="showTab('ski', this)">🎿 Лыжи</button></nav>
@@ -180,5 +180,18 @@ window.addEventListener('resize', function(){
   clearTimeout(_rt);
   _rt = setTimeout(function(){ resizePlots(document); }, 150);
 });
+/* подсказка графика: клик показывает, клик в любое другое место — прячет */
+function hideTip(gd) {
+  try { Plotly.Fx.unhover(gd); } catch(e) {}
+  var layer = gd.querySelector('.hoverlayer');
+  if (layer) { layer.style.opacity = 0; }
+}
+document.addEventListener('click', function(ev) {
+  if (!window.Plotly) return;
+  var inPlot = ev.target && ev.target.closest ? ev.target.closest('.js-plotly-plot') : null;
+  document.querySelectorAll('.js-plotly-plot').forEach(function(gd) {
+    if (gd !== inPlot) hideTip(gd);
+  });
+}, true);
 </script>
 </body></html>
