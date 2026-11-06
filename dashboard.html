@@ -130,7 +130,7 @@ p.empty { font-size: 14.5px; margin: 6px 4px; }
 <div class="wrap">
 <header class="hero glass">
   <h1>⌚️ Спортивные показатели атлета</h1>
-  <div class="sub">Сгенерирован 06.11.2026 15:59 ·
+  <div class="sub">Сгенерирован 06.11.2026 16:00 ·
   Синхронизация данных: <b>2026-11-06T13:24:16</b></div>
 </header>
 <nav class='tabs glass'><button class='tabbtn active' onclick="showTab('overview', this)">📊 Общая</button><button class='tabbtn' onclick="showTab('run', this)">🏃 Бег</button><button class='tabbtn' onclick="showTab('strength', this)">💪 Силовая</button><button class='tabbtn' onclick="showTab('swim', this)">🏊 Плавание</button><button class='tabbtn' onclick="showTab('ski', this)">🎿 Лыжи</button></nav>
@@ -190,7 +190,12 @@ document.addEventListener('click', function(ev) {
   if (!window.Plotly) return;
   var inPlot = ev.target && ev.target.closest ? ev.target.closest('.js-plotly-plot') : null;
   document.querySelectorAll('.js-plotly-plot').forEach(function(gd) {
-    if (gd !== inPlot) hideTip(gd);
+    var layer = gd.querySelector('.hoverlayer');
+    if (gd !== inPlot) {
+      hideTip(gd);
+    } else if (layer) {
+      layer.style.opacity = '';  /* вернуть подсказку этому графику */
+    }
   });
 }, true);
 </script>
